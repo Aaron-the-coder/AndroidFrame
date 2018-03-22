@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goldencarp.lingqianbao.view.activity.GuestureCodeActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="设置手势密码"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:orientation="vertical">
+
+        <com.goldencarp.lingqianbao.view.custom.guesturepwdview.GestureLockDisplayView
+            android:id="@+id/l_display_view"
+            android:layout_width="@dimen/dimens_50_dp"
+            android:layout_height="@dimen/dimens_50_dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/tv_setting_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="请输入手势密码" />
+
+        <com.goldencarp.lingqianbao.view.custom.guesturepwdview.GestureLockLayout
+            android:id="@+id/l_gesture_view"
+            android:layout_width="@dimen/dimens_300_dp"
+            android:layout_height="@dimen/dimens_300_dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</RelativeLayout>

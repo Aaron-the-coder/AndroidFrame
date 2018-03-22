@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">LQBFrame</string>
+
+    <string name="expirience_money">体验金</string>
+    <string name="coupon_pack">券包</string>
+    <string name="msg_management">消息管理</string>
+    <string name="faq">常见问题</string>
+    <string name="network_failure">网络连接失败</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_index">第%d页</string>
+
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+    <string name="hint_pass">请输入密码</string>
+    <string name="spinner_tip">请选择语言</string>
+    <string name="login">登录</string>
+    <string name="please_input_tel">请输入手机号</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="lqb_secure_keyboard">零钱包安全键盘</string>
+    <string name="discover">发现</string>
+    <string name="input_operation_code">输入操作密码</string>
+    <string name="wrong_opration_code">操作密码输入不正确</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="favourate">我的收藏</string>
+    <string name="about_us">关于我们</string>
+</resources>

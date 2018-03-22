@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--内容区-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <!--分类栏-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="新用户专享"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!--右侧的简介和箭头-->
+            <LinearLayout
+                android:id="@+id/ll_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="专享收益"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_open_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/arrow_right"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--横线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+        <!--产品详情-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <!--名称-->
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新人稳赚宝062号"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_pre_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_product_name"
+                android:layout_marginTop="10dp"
+                android:text="预期年化收益率(%)" />
+
+            <TextView
+                android:id="@+id/tv_rate_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_pre_rate"
+                android:text="6.00"
+                android:textColor="#ff0000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_rate_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_rate_left"
+                android:layout_below="@id/tv_pre_rate"
+                android:layout_toRightOf="@id/tv_rate_left"
+                android:gravity="bottom"
+                android:text="+1.5"
+                android:textColor="#ff0000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_rate_left"
+                android:layout_below="@id/tv_pre_rate"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="30天" />
+
+            <TextView
+                android:id="@+id/tv_buy_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_rate_left"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/blue_round_ract"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="立即抢购"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+            <!--底部进度条-->
+            <ProgressBar
+                android:id="@+id/pb_rest"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:max="100"
+                android:progress="50"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tv_buy_now"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progressDrawable="@drawable/my_progress_horizontal" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--列表底部的分割线-->
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#D4D4D4" />
+</LinearLayout>

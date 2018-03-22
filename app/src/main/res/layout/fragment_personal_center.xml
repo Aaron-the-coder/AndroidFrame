@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.goldencarp.lingqianbao.view.fragment.PersonalCenterFragment">
+
+    <include layout="@layout/include_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--内容区域-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--账号信息-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_head_portrait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_head_portrait"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="嘿嘿嘿" />
+
+                    <TextView
+                        android:id="@+id/tv_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="156*********" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_switch_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:text="切换账号" />
+            </RelativeLayout>
+            <!--智能模式-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/ic_launcher_round"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@mipmap/arrow_right"
+                    android:gravity="center_vertical"
+                    android:text="智能模式" />
+
+                <ToggleButton
+                    android:id="@+id/tb_intelligent_mode"
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/switch_button"
+                    android:checked="false"
+                    android:textOff="@null"
+                    android:textOn="@null" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/graye8" />
+            <!--体验金-->
+            <com.goldencarp.lingqianbao.view.custom.PersonalCenterItemView
+                android:id="@+id/expirence_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:icon="@mipmap/icon1"
+                app:name="@string/expirience_money"
+                app:show_msg_amount="true"
+                app:show_tip_right="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/graye8" />
+            <!--体验金-->
+            <com.goldencarp.lingqianbao.view.custom.PersonalCenterItemView
+                android:id="@+id/coupon_pack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:icon="@mipmap/icon1"
+                app:name="@string/coupon_pack"
+                app:show_msg_amount="true"
+                app:show_tip_right="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/graye8" />
+
+            <com.goldencarp.lingqianbao.view.custom.PersonalCenterItemView
+                android:id="@+id/faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:icon="@mipmap/icon1"
+                app:name="@string/faq"
+                app:show_msg_amount="true"
+                app:show_tip_right="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

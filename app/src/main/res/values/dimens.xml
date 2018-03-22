@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pagemargin">16dp</dimen>
+    <dimen name="dimens_50_dp">50dp</dimen>
+    <dimen name="dimens_300_dp">300dp</dimen>
+    <dimen name="pickerview_textsize">20sp</dimen>
+    <dimen name="pickerview_topbar_padding">20dp</dimen>
+    <dimen name="pickerview_topbar_btn_textsize">17sp</dimen>
+    <dimen name="pickerview_topbar_title_textsize">18sp</dimen>
+    <dimen name="pickerview_topbar_height">44dp</dimen>
+    <dimen name="dimens_45_dp">45</dimen>
+    <dimen name="statusbar_view_height">25dp</dimen>
+    <dimen name="dimens_30_dp">30dp</dimen>
+    <dimen name="dimens_5_dp">5dp</dimen>
+    <dimen name="dimens_10_dp">10dp</dimen>
+    <dimen name="dimens_2_dp">2dp</dimen>
+    <dimen name="dimens_20_dp">20dp</dimen>
+    <dimen name="dimens_15_sp">15sp</dimen>
+    <dimen name="dimens_100_dp">100dp</dimen>
+    <dimen name="dimens_25_dp">25dp</dimen>
+</resources>

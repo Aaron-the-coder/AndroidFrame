@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.goldencarp.lingqianbao.view.custom.dealpassword.GridPasswordView
+        android:id="@+id/gridpasswordview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+
+        app:gpvTextColor="#2196F3"
+        app:gpvTextSize="25sp"
+        app:gpvLineColor="#2196F3"
+        app:gpvLineWidth="1dp"
+        app:gpvGridColor="#ffffff"
+        app:gpvPasswordLength="6"
+        app:gpvPasswordTransformation="●"
+        app:gpvPasswordType="numberPassword"/>
+
+<Button
+    android:id="@+id/btn_show"
+    android:layout_width="wrap_content"
+    android:layout_height="1000dp"
+    android:text="hello world"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="30dp"
+    android:visibility="gone"/>
+</LinearLayout>

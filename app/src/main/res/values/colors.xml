@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="graye8">#E8E8E8</color>
+    <color name="colorTop">#00000000</color>
+
+    <color name="keyboard_bg">#BDBDBD</color>
+    <color name="iv_back_bg">#F5F5F5</color>
+    <color name="key_normal_bg">#F8F8F8</color>
+    <color name="key_pressed_bg">#33000000</color>
+    <color name="deal_code_divider">#A7A7A7</color>
+    <color name="btn_gray">#E0E0E0</color>
+
+    <!--滚轮选择器颜色-->
+    <color name="pickerview_timebtn_nor">#057dff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <color name="pickerview_bgColor_overlay">#60000000</color>
+    <color name="pickerview_bgColor_default">#FFFFFFFF</color>
+    <color name="text_hint_color">#4A4A4A</color>
+    <color name="tip_red">#FD5F80</color>
+</resources>

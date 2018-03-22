@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context="com.goldencarp.lingqianbao.view.activity.CrashActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="综合"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_send_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="短信验证"/>
+
+        <com.goldencarp.lingqianbao.view.custom.customseekbar.BubbleSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="@dimen/dimens_50_dp"
+            app:bsb_always_show_bubble="true"
+            app:bsb_auto_adjust_section_mark="true"
+            app:bsb_second_track_color="@android:color/holo_red_dark"
+            app:bsb_section_count="5"
+            app:bsb_section_text_position="below_section_mark"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"
+            app:bsb_touch_to_seek="true"
+            app:bsb_track_color="@android:color/holo_red_light" />
+
+        <Button
+            android:id="@+id/btn_show_date_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示一个日期滚轮"/>
+        <Button
+            android:id="@+id/btn_validate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拼图验证"/>
+        <!--<com.goldencarp.lingqianbao.view.custom.PwdVisibleLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"-->
+            <!--pwdVisible:hint="@string/hint_pass"-->
+            <!--android:padding="0dp"-->
+            <!--android:layout_margin="0dp"-->
+            <!--pwdVisible:textSize="15sp"/>-->
+        <com.goldencarp.lingqianbao.view.custom.MultiProgressnbar
+            android:id="@+id/mpb_ac_progress"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center_horizontal"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_head_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@mipmap/desert"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+        <Spinner
+            android:id="@+id/spinner_languages"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimens_50_dp"
+            android:entries="@array/languages"
+            android:layout_gravity="center_horizontal"
+            android:prompt="@string/spinner_tip"/>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/seekBar1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_above="@+id/seekBar2"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="35dp"
+                android:layout_toLeftOf="@+id/tvXMax"
+                android:layout_marginRight="5dp"
+                android:max="1500"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvYMax"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/seekBar1"
+                android:layout_alignParentRight="true"
+                android:text="500"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_above="@+id/seekBar2"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="35dp"
+                android:layout_toLeftOf="@+id/tvXMax"
+                android:layout_marginRight="5dp"
+                android:max="500"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvXMax"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/seekBar1"
+                android:layout_alignParentRight="true"
+                android:text="500"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <com.goldencarp.lingqianbao.view.custom.SlantSeal
+            android:id="@+id/ss_ac_seal"
+            android:layout_width="@dimen/dimens_100_dp"
+            android:layout_height="@dimen/dimens_100_dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</ScrollView>
