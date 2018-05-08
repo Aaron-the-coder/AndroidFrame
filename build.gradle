@@ -2,12 +2,17 @@
 
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
         maven { url "https://jitpack.io" }
         mavenCentral()
+        google()
+        maven {
+            url "https://maven.google.com"
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 //        classpath 'com.android.tools.build:gradle:3.0.0'
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
@@ -15,8 +20,8 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'org.codehaus.groovy:groovy-backports-compat23:2.3.5'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
 
@@ -27,6 +32,7 @@ allprojects {
         maven { url 'https://maven.google.com' }
         maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
         maven { url "https://jitpack.io" }
+        google()
     }
 }
 

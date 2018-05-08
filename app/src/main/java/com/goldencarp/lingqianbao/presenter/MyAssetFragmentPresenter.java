@@ -29,6 +29,7 @@ public class MyAssetFragmentPresenter implements IMyAssetFragmentPresenter {
         list.add("异步处理");
         list.add("崩溃日志");
         list.add("android6.0动态权限");
+        list.add("图片压缩");
         return list;
     }
 }

@@ -228,7 +228,8 @@
         <activity android:name=".view.activity.ComolexListActivity" />
         <activity android:name=".view.activity.AsyncTestActivity" />
         <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.DemoActivity"></activity>
+        <activity android:name=".view.activity.DemoActivity" />
+        <activity android:name=".view.activity.CompressActivity"></activity>
     </application>
 
 </manifest>

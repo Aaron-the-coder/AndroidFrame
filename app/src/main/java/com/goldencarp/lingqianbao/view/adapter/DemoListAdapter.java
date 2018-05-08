@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.goldencarp.lingqianbao.R;
 import com.goldencarp.lingqianbao.view.activity.AsyncTestActivity;
 import com.goldencarp.lingqianbao.view.activity.CacheCleanActivity;
+import com.goldencarp.lingqianbao.view.activity.CompressActivity;
 import com.goldencarp.lingqianbao.view.activity.CrashActivity;
 import com.goldencarp.lingqianbao.view.activity.DealCodeActivity;
 import com.goldencarp.lingqianbao.view.activity.DemoActivity;
@@ -100,6 +101,10 @@ public class DemoListAdapter extends RecyclerView.Adapter<DemoListAdapter.MyView
                     case 10://动态权限
                         Intent permissionIntent = new Intent(mContext, PermissionActivity.class);
                         mContext.startActivity(permissionIntent);
+                        break;
+                    case 11://图片压缩
+                        Intent compressIntent = new Intent(mContext, CompressActivity.class);
+                        mContext.startActivity(compressIntent);
                         break;
                 }
             }
