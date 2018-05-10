@@ -18,4 +18,6 @@
     <dimen name="dimens_15_sp">15sp</dimen>
     <dimen name="dimens_100_dp">100dp</dimen>
     <dimen name="dimens_25_dp">25dp</dimen>
+    <dimen name="dimens_15_dp">15dp</dimen>
+    <dimen name="dimens_60_dp">60dp</dimen>
 </resources>

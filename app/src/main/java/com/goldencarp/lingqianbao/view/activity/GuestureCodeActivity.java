@@ -10,7 +10,7 @@ import com.goldencarp.lingqianbao.R;
 import com.goldencarp.lingqianbao.view.LQBApp;
 import com.goldencarp.lingqianbao.view.custom.guesturepwdview.GestureLockDisplayView;
 import com.goldencarp.lingqianbao.view.custom.guesturepwdview.GestureLockLayout;
-import com.goldencarp.lingqianbao.view.custom.guesturepwdview.QQLockView;
+import com.goldencarp.lingqianbao.view.custom.guesturepwdview.JDLockView;
 
 import java.util.List;
 
@@ -86,7 +86,7 @@ public class GuestureCodeActivity extends BaseActivity {
         //设置手势密码最少的点个数
         lGestureView.setMinCount(4);
         //设置解锁样式为京东手势样式
-        lGestureView.setLockView(new QQLockView(this));
+        lGestureView.setLockView(new JDLockView(this));
         lGestureView.setMode(GestureLockLayout.RESET_MODE);
     }
 

@@ -13,6 +13,7 @@ import com.goldencarp.lingqianbao.R;
 import com.goldencarp.lingqianbao.view.activity.AsyncTestActivity;
 import com.goldencarp.lingqianbao.view.activity.CacheCleanActivity;
 import com.goldencarp.lingqianbao.view.activity.CompressActivity;
+import com.goldencarp.lingqianbao.view.activity.ConstraintLayoutActivity;
 import com.goldencarp.lingqianbao.view.activity.CrashActivity;
 import com.goldencarp.lingqianbao.view.activity.DealCodeActivity;
 import com.goldencarp.lingqianbao.view.activity.DemoActivity;
@@ -105,6 +106,10 @@ public class DemoListAdapter extends RecyclerView.Adapter<DemoListAdapter.MyView
                     case 11://图片压缩
                         Intent compressIntent = new Intent(mContext, CompressActivity.class);
                         mContext.startActivity(compressIntent);
+                        break;
+                    case 12://限制布局
+                        Intent constraintIntent = new Intent(mContext, ConstraintLayoutActivity.class);
+                        mContext.startActivity(constraintIntent);
                         break;
                 }
             }

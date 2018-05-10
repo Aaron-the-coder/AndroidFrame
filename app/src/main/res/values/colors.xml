@@ -26,4 +26,5 @@
     <color name="pickerview_bgColor_default">#FFFFFFFF</color>
     <color name="text_hint_color">#4A4A4A</color>
     <color name="tip_red">#FD5F80</color>
+    <color name="transparent">#00000000</color>
 </resources>

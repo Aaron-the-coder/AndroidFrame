@@ -1,71 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:pwdVisible="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_al_tile"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:padding="10dp"
         android:text="@string/login"
         android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:gravity="center"
+        pwdVisible:layout_constraintLeft_toLeftOf="parent"
+        pwdVisible:layout_constraintRight_toRightOf="parent"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/iv_al_usericon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/user_icon"
+                pwdVisible:layout_constraintTop_toBottomOf="@id/tv_al_tile"
+                android:layout_marginTop="@dimen/dimens_50_dp"
+                android:layout_marginLeft="@dimen/dimens_20_dp"
+                pwdVisible:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="@dimen/dimens_20_dp" />
 
             <com.goldencarp.lingqianbao.view.custom.ClearableEditText
                 android:id="@+id/et_al_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/shape_black_rect_border"
                 android:hint="@string/please_input_tel"
                 android:maxLength="11"
                 android:maxLines="1"
-                android:inputType="number"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_black_rect_border"
-            android:orientation="horizontal">
+                android:textSize="@dimen/dimens_15_sp"
+                android:inputType="number"
+                android:layout_marginRight="@dimen/dimens_20_dp"
+                pwdVisible:layout_constraintLeft_toRightOf="@id/iv_al_usericon"
+                android:layout_marginLeft="@dimen/dimens_10_dp"
+                pwdVisible:layout_constraintTop_toTopOf="@id/iv_al_usericon"
+                pwdVisible:layout_constraintBottom_toBottomOf="@id/iv_al_usericon"
+                android:layout_marginStart="@dimen/dimens_10_dp"
+                pwdVisible:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="@dimen/dimens_20_dp" />
 
             <ImageView
+                android:id="@+id/iv_al_pwdicon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_launcher"
+                pwdVisible:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="@dimen/dimens_20_dp"
+                pwdVisible:layout_constraintTop_toBottomOf="@id/iv_al_usericon"
+                android:layout_marginTop="@dimen/dimens_30_dp"
+                android:layout_marginLeft="@dimen/dimens_20_dp"
+                android:contentDescription="@string/pwd_icon" />
 
             <com.goldencarp.lingqianbao.view.custom.PwdClearableLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_gravity="center_vertical"
                 pwdVisible:hint="@string/please_input_password"
-                />
+                pwdVisible:textSize="@dimen/dimens_15_sp"
+                pwdVisible:layout_constraintTop_toTopOf="@id/iv_al_pwdicon"
+                pwdVisible:layout_constraintBottom_toBottomOf="@id/iv_al_pwdicon"
+                pwdVisible:layout_constraintLeft_toRightOf="@id/iv_al_pwdicon"
+                pwdVisible:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="@dimen/dimens_10_dp"
+                android:layout_marginEnd="@dimen/dimens_20_dp"
+                android:layout_marginLeft="@dimen/dimens_10_dp"
+                android:layout_marginRight="@dimen/dimens_20_dp" />
 
             <com.goldencarp.lingqianbao.view.custom.ClearableEditText
                 android:id="@+id/et_al_pwd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1"
                 android:background="@null"
                 android:inputType="textPassword"
                 android:maxLength="18"
@@ -82,7 +100,51 @@
                 android:button="@null"
                 android:checked="false"
                 android:visibility="gone"/>
-        </LinearLayout>
 
-    </LinearLayout>
-</LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/widget_textinput_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputLayoutLineColor"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
+            app:counterOverflowTextAppearance="@style/counterOverflowTextAppearance"
+            app:errorTextAppearance="@style/errorAppearance"
+            app:hintTextAppearance="@style/hintAppearance"
+            pwdVisible:layout_constraintTop_toBottomOf="@id/iv_al_pwdicon">
+
+            <EditText
+                android:id="@+id/widget_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入用户名"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/widget_textinput_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextInputLayoutLineColor"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
+            app:counterOverflowTextAppearance="@style/counterOverflowTextAppearance"
+            app:errorTextAppearance="@style/errorAppearance"
+            app:hintTextAppearance="@style/hintAppearance"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorAccent"
+            pwdVisible:layout_constraintTop_toBottomOf="@id/widget_textinput_layout">
+
+                <EditText
+                    android:id="@+id/widget_et2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入密码"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -93,4 +93,46 @@
         <item name="android:windowExitAnimation">@anim/pickerview_dialog_scale_out</item>
     </style>
 
+    <style name="bottom_sheet_dialog_text">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="item_security_setting_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">@dimen/dimens_20_dp</item>
+    </style>
+
+    <!--<style name="TextInputLayoutLineColor">#CCEED0</style>-->
+
+    <!--EditText的主題 Start-->
+    <style name="TextInputLayoutLineColor" parent="Theme.AppCompat.Light">
+        <!--没有获取焦点时的颜色-->
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <!--获取焦点时的颜色-->
+        <item name="colorControlActivated">#CCEED0</item>
+    </style>
+
+    <!--浮动标签-->
+    <style name="hintAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!--错误提示信息-->
+    <style name="errorAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <!--超出计数最大长度,浮动标签,下划线,计数文字都会改变颜色-->
+    <style name="counterOverflowTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+    <!--EditText的主題 End-->
+
 </resources>

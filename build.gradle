@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         mavenLocal()
-        jcenter()
+        maven { url "http://jcenter.bintray.com"}
         maven { url "https://jitpack.io" }
         mavenCentral()
         google()
@@ -27,7 +27,7 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        maven { url "http://jcenter.bintray.com"}
         mavenCentral()
         maven { url 'https://maven.google.com' }
         maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }

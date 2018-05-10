@@ -48,6 +48,7 @@ public class CompressActivity extends AppCompatActivity {
         filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera/a.png";
         bit = BitmapFactory.decodeFile(filePath);
         ivShowResult.setImageBitmap(bit);
+        if (bit != null)
         Log.i(LOG, "压缩前的图片大小为:" + bit.getByteCount() / 1024 / 1024 + "M\n" + "图片的宽为:" + bit.getWidth() + "图片的高为:" + bit.getHeight());
     }
 

@@ -20,7 +20,7 @@
         app:gpvPasswordType="numberPassword"/>
 
 <Button
-    android:id="@+id/btn_show"
+    android:id="@+id/btn_show_bottom_deal"
     android:layout_width="wrap_content"
     android:layout_height="1000dp"
     android:text="hello world"

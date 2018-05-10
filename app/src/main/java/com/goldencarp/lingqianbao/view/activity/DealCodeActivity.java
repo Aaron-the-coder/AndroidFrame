@@ -4,19 +4,23 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.goldencarp.lingqianbao.R;
 import com.goldencarp.lingqianbao.view.custom.PasswordInputEdt;
-import com.goldencarp.lingqianbao.view.custom.visualkeyboard.AliPayWindow;
 import com.goldencarp.lingqianbao.view.custom.dealpassword.GridPasswordView;
+import com.goldencarp.lingqianbao.view.custom.visualkeyboard.AliPayWindow;
 import com.goldencarp.lingqianbao.view.custom.visualkeyboard.OnPasswordFinishedListener;
 import com.goldencarp.lingqianbao.view.util.Logger;
 import com.orhanobut.dialogplus.DialogPlus;
@@ -27,7 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DealCodeActivity extends BaseActivity implements OnPasswordFinishedListener {
+public class DealCodeActivity extends BaseActivity implements OnPasswordFinishedListener, View.OnClickListener {
 
     private static final String LOG_TAG = "DealCodeActivity";
     @BindView(R.id.textView5)
@@ -38,14 +42,22 @@ public class DealCodeActivity extends BaseActivity implements OnPasswordFinished
     Button btnConfirm;
 
     public String password;//交易密码
-    @BindView(R.id.btn_show)
+    @BindView(R.id.btn_show_bottom_deal)
     Button btnShow;
     @BindView(R.id.rl_parent)
     RelativeLayout rlParent;
+    @BindView(R.id.btn_show_bottom_select)
+    Button btnShowBottomSelect;
+    @BindView(R.id.ll_first_line)
+    LinearLayout llFirstLine;
+    @BindView(R.id.btn_show_custom_dialog)
+    Button btnShowCustomDialog;
 
     private InputMethodManager imm;
     private AliPayWindow aliPayWindow;
     private static Handler mHandler = new Handler();
+    private BottomSheetDialog bsd;
+    private AlertDialog.Builder customDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,23 +76,49 @@ public class DealCodeActivity extends BaseActivity implements OnPasswordFinished
                 password = text;
             }
         });
+
+        View bottomSheetView = View.inflate(this, R.layout.dialog_bottom_sheet, null);
+        View tvCamera = bottomSheetView.findViewById(R.id.tv_dbs_camera);
+        View tvAlbum = bottomSheetView.findViewById(R.id.tv_dbs_open_album);
+        View tvCancel = bottomSheetView.findViewById(R.id.tv_dbs_cancel);
+        tvCamera.setOnClickListener(this);
+        tvAlbum.setOnClickListener(this);
+        tvCancel.setOnClickListener(this);
+        bsd = new BottomSheetDialog(this);
+        bsd.setContentView(bottomSheetView);
+        bsd.getDelegate().findViewById(android.support.design.R.id.design_bottom_sheet).setBackgroundColor(this.getResources().getColor(R.color.transparent));
     }
 
-    @OnClick({R.id.btn_confirm, R.id.btn_show})
+    @OnClick({R.id.btn_confirm, R.id.btn_show_bottom_deal, R.id.btn_show_bottom_select, R.id.btn_show_custom_dialog})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_confirm:
                 Logger.e(LOG_TAG, "password==" + password);
                 break;
-            case R.id.btn_show:
+            case R.id.btn_show_bottom_deal:
 //                showDialogPlus();
                 aliPayWindow = new AliPayWindow(this);
                 aliPayWindow.setOnPasswordFinishedListener(this);
                 aliPayWindow.show(rlParent);
 
                 break;
+            case R.id.btn_show_bottom_select:
+                if (bsd != null)
+                    bsd.show();
+                break;
+            case R.id.btn_show_custom_dialog:
+                showAlertDialog();
+                break;
         }
 
+    }
+
+    private void showAlertDialog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.layout_enter_valify_code, null);
+        customDialog = new AlertDialog.Builder(this)
+//                .setTitle("请输入验证码")
+        .setView(view);
+        customDialog.show();
     }
 
     private void showDialogPlus() {
@@ -92,7 +130,7 @@ public class DealCodeActivity extends BaseActivity implements OnPasswordFinished
                     @Override
                     public void onClick(DialogPlus dialog, View view) {
                         switch (view.getId()) {
-                            case R.id.btn_show:
+                            case R.id.btn_show_bottom_deal:
                                 Toast.makeText(DealCodeActivity.this, "hello", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 break;
@@ -167,6 +205,24 @@ public class DealCodeActivity extends BaseActivity implements OnPasswordFinished
             }, 2000);
         }
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_dbs_camera:
+                Toast.makeText(this, "打开摄像头", Toast.LENGTH_SHORT).show();
+                bsd.dismiss();
+                break;
+            case R.id.tv_dbs_open_album:
+                Toast.makeText(this, "打开相册", Toast.LENGTH_SHORT).show();
+                bsd.dismiss();
+                break;
+            case R.id.tv_dbs_cancel:
+                Toast.makeText(this, "取消", Toast.LENGTH_SHORT).show();
+                bsd.dismiss();
+                break;
+        }
     }
 
 //    private class MyHolder extends ViewHolder {
